@@ -11,3 +11,7 @@ export const createPost = async (data: NewPost): Promise<Post> => {
   const res = await api.post<Post>('/posts', data);
   return res.data;
 };
+
+export const deletePost = async (id: number) : Promise<void> => {
+  await api.delete(`/posts/${id}`);
+};
